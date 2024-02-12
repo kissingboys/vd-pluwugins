@@ -1,0 +1,14 @@
+{
+    "name": "thingie",
+    "description": "changes ur friend pfp :3",
+    "authors": [
+        {
+            "name": "Discord",
+            "id": "643945264868098049"
+        }
+    ],
+    "main": "src/index.ts",
+    "vendetta": {
+        "icon": "img_nitro_emojis"
+    }
+}

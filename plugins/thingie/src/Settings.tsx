@@ -4,9 +4,8 @@ import { storage } from "@vendetta/plugin";
 import { Forms } from "@vendetta/ui/components";
 import { General } from "@vendetta/ui/components";
 
-const { FormText } = Forms;
-const { default: InputView } = findByProps("ClearButtonVisibility");
-const { View } = General;
+const { FormText, FormLabel, FormRow, FormSwitchRow, FormSection, FormDivider, FormInput } = Forms;
+const { ScrollView, View } = General;
 
 
 export default () => {
@@ -18,24 +17,21 @@ export default () => {
     }
 
     return (
-        <FormText>
-            <View style={{ display: "flex", flexDirection: "column" }}>
-            <InputView 
+        <ScrollView>
+            <View style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            <FormInput
+                title="User ID"
+                placeholder="0"
                 value={storage.userID}
-                onChangeText={onChangeID}
-                placeholder="User ID"
-                showBorder={false}
-                style={{ width: "90%" }}
-
+                onChange={onChangeID}
             />
-            <InputView 
+            <FormInput
+                title="Avatar URL"
+                placeholder="0"
                 value={storage.avatarURL}
-                onChangeText={onChangeURL}
-                placeholder="Avatar URL"
-                showBorder={false}
-                style={{ width: "90%" }}
+                onChange={onChangeURL}
             />
             </View>
-        </FormText>
+        </ScrollView>
     )
 }
